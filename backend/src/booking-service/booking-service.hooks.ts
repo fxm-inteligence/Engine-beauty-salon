@@ -1,0 +1,28 @@
+// Yours: a Regenerate never overwrites this file. Each hook runs around the Service method of the same name.
+import type { Hooks } from "../with-hooks";
+import type { BookingService } from "./booking-service.service";
+
+export const hooks: Hooks<BookingService> = {
+  before: {
+    // listBookings(...) { /* throw to refuse the call */ },
+    // getBookingBusy(...) { /* throw to refuse the call */ },
+    // getBookingFree(...) { /* throw to refuse the call */ },
+    // getBooking(...) { /* throw to refuse the call */ },
+    // createBooking(...) { /* throw to refuse the call */ },
+    // updateBooking(...) { /* throw to refuse the call */ },
+    // patchBooking(...) { /* throw to refuse the call */ },
+    // deleteBooking(...) { /* throw to refuse the call */ },
+    // getBookingTransitions(...) { /* throw to refuse the call */ },
+  },
+  after: {
+    // listBookings(result, ...) { return result; },
+    // getBookingBusy(result, ...) { return result; },
+    // getBookingFree(result, ...) { return result; },
+    // getBooking(result, ...) { return result; },
+    // createBooking(result, ...) { return result; },
+    // updateBooking(result, ...) { return result; },
+    // patchBooking(result, ...) { return result; },
+    // deleteBooking(result, ...) { return result; },
+    // getBookingTransitions(result, ...) { return result; },
+  },
+};

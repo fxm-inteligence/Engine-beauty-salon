@@ -1,0 +1,56 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Schema: AppDatabase
+
+model Treatment {
+  id String @id @default(uuid()) @db.Uuid
+  name String
+  minutes Int
+  price Int
+  createdAt DateTime? @default(now())
+}
+
+model Master {
+  id String @id @default(uuid()) @db.Uuid
+  name String
+  hours String?
+  daysOff String?
+  createdAt DateTime? @default(now())
+}
+
+model Booking {
+  id String @id @default(uuid()) @db.Uuid
+  treatmentId String @db.Uuid
+  masterId String @db.Uuid
+  clientName String
+  phone String?
+  startsAt DateTime
+  clientTelegramId String?
+  status String? @default("new")
+  reminded Boolean? @default(false)
+  createdAt DateTime? @default(now())
+}
+
+model BookingStatusLog {
+  id String @id @default(uuid()) @db.Uuid
+  recordId String
+  fromStatus String?
+  toStatus String
+  changedAt Float
+}
+
+model BookingAuditLog {
+  id String @id @default(uuid()) @db.Uuid
+  recordId String
+  action String
+  actor String?
+  changes String? @db.Text
+  changedAt Float
+}
